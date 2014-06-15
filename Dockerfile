@@ -1,18 +1,9 @@
-#
-# Ubuntu Dockerfile
-#
-# https://github.com/GeertVB/docker-java
-#
-
-FROM 192.168.0.29:5000/geertvb/docker-ubuntu
+FROM ubuntu:14.04
 
 RUN \
   apt-get update && \
-  apt-get -y upgrade
-
-RUN \
   apt-get install -y software-properties-common
-
+  
 RUN \
   echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
   echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections && \
